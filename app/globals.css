@@ -1,4 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap');
 @import "tailwindcss";
+
+/* ============================================================
+   Nomadic Lab — Tailwind v4 theme tokens
+
+   Paste this into your globals.css, directly after
+   @import "tailwindcss";
+
+   Every token is prefixed `nl-` so it sits alongside your existing
+   theme without overriding any Tailwind default. Each color has an
+   explicit `-dark` counterpart used via the `dark:` variant in the
+   components — Tailwind v4's `dark:` follows prefers-color-scheme
+   out of the box.
+   ============================================================ */
+
+@theme {
+  /* --- surfaces & text --- */
+  --color-nl-ground: #f5f7f9;        /* page ground   */
+  --color-nl-ground-dark: #0a0f17;
+  --color-nl-ink: #0e1726;           /* headings      */
+  --color-nl-ink-dark: #e8eef6;
+  --color-nl-body: #31415a;          /* body copy     */
+  --color-nl-body-dark: #b9c7d9;
+  --color-nl-muted: #5b6e8c;         /* labels, meta  */
+  --color-nl-muted-dark: #8fa2bc;
+
+  /* --- brand --- */
+  --color-nl-navy: #1a365d;          /* the reticle ring */
+  --color-nl-navy-dark: #8fb4e2;
+  --color-nl-coral: #ff6b35;         /* the mark's nodes */
+  --color-nl-coral-dark: #ff8055;
+  --color-nl-accent: #c63f0e;        /* coral, darkened for text contrast */
+  --color-nl-accent-dark: #ff9a76;
+
+  /* --- rules --- */
+  --color-nl-line: #dce2ea;
+  --color-nl-line-dark: #22303f;
+  --color-nl-line-strong: #c3cdda;
+  --color-nl-line-strong-dark: #33455a;
+
+  /* --- type ---
+     Namespaced so they don't clobber Tailwind's font-sans/font-mono.
+     If you wire up next/font (recommended — see setup notes), switch
+     this block to `@theme inline` and point each at the font variable,
+     e.g. --font-nl-display: var(--font-archivo), sans-serif; */
+  --font-nl-display: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-nl-body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-nl-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* If your app drives dark mode with a class or data attribute rather
+   than the OS setting, uncomment the matching line so `dark:` follows
+   it instead of prefers-color-scheme:
+
+   @custom-variant dark (&:where(.dark, .dark *));
+   @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+*/
+
 
 @theme {
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,

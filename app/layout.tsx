@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { NomadicLabHeader, NomadicLabFooter } from "@/components/NomadicLabChrome";
 
 export const metadata: Metadata = {
   title: "AI Job Description Analyzer",
@@ -14,7 +15,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="flex min-h-screen flex-col">
+        <NomadicLabHeader productName="" />
+        <div className="flex-1">{children}</div>
+        <NomadicLabFooter />
+      </body>
     </html>
   );
 }
